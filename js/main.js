@@ -1,6 +1,5 @@
 $( document ).ready(function(){
-    $(window).resize(conMargin);
-    conMargin();
+    (window).resize(conMargin).trigger('resize');
     navSlide();
     mainSldie();
     todaySlide();
@@ -42,14 +41,6 @@ function mainSldie(){
         target.eq(targetIndex).removeClass('active');
         target.eq(nextIndex).addClass('active');
     });
-
-    setInterval(function(){
-        var targetIndex = target.index($('.mainSlideBox ul li.active'));
-        var setIndex = (targetIndex === targetCount - 1) ? 0 : targetIndex + 1;
-
-        target.eq(targetIndex).removeClass('active');
-        target.eq(setIndex).addClass('active');
-    }, 5000); 
 }
 
 function todaySlide(){
