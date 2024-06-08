@@ -1,5 +1,6 @@
 $( document ).ready(function(){
-    $(window).resize(conMargin).trigger('resize');
+    conMargin(); 
+    $(window).resize(conMargin); 
     navSlide();
     mainSldie();
     todaySlide();
