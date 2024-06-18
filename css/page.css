@@ -235,10 +235,12 @@
     }
     .mainContainer .recommend > div:last-child div ul li div{
         background-color: rgba(51, 51, 51, 0.3); margin: 0 auto; position: absolute;
-        top: 2.08vw; left: 50%; transform: translateX(-50%); height: 15.36vw; display: none;
+        top: 2.08vw; left: 50%; transform: translateX(-50%); height: 15.36vw; opacity: 0;
+        display: flex; flex-direction: column; align-items: center; justify-content: center;
+        transition: opacity 0.2s ease-in;
     }
     .mainContainer .recommend > div:last-child div ul li:hover div{
-        display: flex; flex-direction: column; align-items: center; justify-content: center;
+        opacity: 1;
     }
     .mainContainer .recommend > div:last-child div ul li div a{
         display: block; color: #fff; background: rgba(40, 90, 53,0.6); transition: background-color 0.1s linear;
