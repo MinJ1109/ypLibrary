@@ -1,11 +1,20 @@
 $( document ).ready(function(){
     $(window).load(conMargin);
     $(window).resize(conMargin); 
+    $(window).resize(divSize);
+    $(window).resize(divH);
+
     navSlide();
     mainSldie();
     todaySlide();
     hotSlide();
+    recoSlide();
+
+    divSize();
+    divH();
+
 });
+
 function conMargin(){
     var height = $('header').outerHeight(true);
     var targetPoint = $('[class$="Container"]');
@@ -87,5 +96,34 @@ function hotSlide(){
 
         target.eq(targetIndex).removeClass('active');
         target.eq(nextIndex).addClass('active');
+    });
+}
+
+function divH(){
+    var height = $(".mainContainer .recommend > div:last-child div").outerHeight();
+    $(".mainContainer .recommend > div:last-child").css('height', height);
+}
+
+function divSize(){
+    $('.mainContainer .recommend > div:last-child div ul li').each(function(){
+        var imgWidth = $(this).find('img').width();
+        $(this).find('div').css('width', imgWidth);
+    });
+}
+
+function recoSlide(){    
+    var activeBtn = $('.mainContainer .recommend > div:first-child input[type="button"]');
+
+    activeBtn.on('click', function() {
+        var otherDiv = $('.mainContainer .recommend > div:last-child div');
+        var target = $(this).data('click');
+        var divTarget = $('#' + target);
+
+        activeBtn.removeClass('active');
+        $(this).addClass('active');
+        otherDiv.removeClass('active');
+        divTarget.addClass('active');
+
+        divSize();
     });
 }

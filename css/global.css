@@ -3,6 +3,7 @@ body, ul, ol, h1, h2, h3, p{margin: 0; padding: 0;}
 li{list-style: none;}
 a{text-decoration: none;}
 input{font-size: inherit;}
+.mainContainer img:not(.mainSlideBox img){box-shadow: 0 0 0.78vw rgba(51, 51, 51, 0.3);}
 
 input::-webkit-search-decoration,
 input::-webkit-search-cancel-button,
@@ -16,20 +17,16 @@ input::-webkit-search-results-decoration{display:none;}
     background-color: rgba(40, 90, 53, 0.6); background-repeat: no-repeat;
     background-size: 80%; background-position: center; transition: background-color 0.2s linear;
 }
-.controlStyle01 input:hover{
-    background-color: #285A35;
-}
-.controlStyle01 input:first-child{
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='24px' viewBox='0 0 24 24' width='24px' fill='%23fff'%3E%3Cpath d='M0 0h24v24H0V0z' fill='none'/%3E%3Cpath d='M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z'/%3E%3C/svg%3E");
-}
-.controlStyle01 input:last-child{
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='24px' viewBox='0 0 24 24' width='24px' fill='%23fff'%3E%3Cpath d='M0 0h24v24H0V0z' fill='none'/%3E%3Cpath d='M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8-8-8z'/%3E%3C/svg%3E");
-}
+.controlStyle01 input:hover{background-color: #285A35;}
+.controlStyle01 input:first-child{background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='24px' viewBox='0 0 24 24' width='24px' fill='%23fff'%3E%3Cpath d='M0 0h24v24H0V0z' fill='none'/%3E%3Cpath d='M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z'/%3E%3C/svg%3E");}
+.controlStyle01 input:last-child{background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='24px' viewBox='0 0 24 24' width='24px' fill='%23fff'%3E%3Cpath d='M0 0h24v24H0V0z' fill='none'/%3E%3Cpath d='M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8-8-8z'/%3E%3C/svg%3E");}
 
 .fts16{font-size: 0.83vw;}
 .fts18{font-size: 0.93vw;}
 .fts20{font-size: 1.04vw;}
 .fts24{font-size: 1.25vw;}
+.fts25{font-size: 1.3vw;}
+.fts28{font-size: 1.45vw;}
 .fts30{font-size: 1.56vw;}
 .fts35{font-size: 1.82vw;}
 

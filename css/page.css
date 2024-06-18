@@ -9,7 +9,7 @@
     .mainContainer .mainSlideBox span input{
         display: block; width: 1.56vw; height: 2.86vw; text-indent: -9999px; transition: all 0.2s linear;
         background-repeat: no-repeat; background-position: center; background-size: cover; opacity: 0.3;
-        border: none; background-color: transparent;
+        border: none; background-color: transparent; cursor: pointer;
     }
     .mainContainer .mainSlideBox span input:first-child{
         background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='24px' viewBox='0 0 24 24' width='24px' fill='%23fff'%3E%3Cpath d='M0 0h24v24H0V0z' fill='none' opacity='.87'/%3E%3Cpath d='M17.51 3.87L15.73 2.1 5.84 12l9.9 9.9 1.77-1.77L9.38 12l8.13-8.13z'/%3E%3C/svg%3E");
@@ -131,7 +131,7 @@
     }
     .mainContainer .todayBook > div ul li a img,
     .mainContainer .hotBook > div ul li a img{
-        width: 67.34%; box-shadow: 0 0 0.78vw rgba(51, 51, 51, 0.3);
+        width: 67.34%; 
     }
     .mainContainer .todayBook > div ul li div,
     .mainContainer .hotBook > div ul li div{
@@ -177,7 +177,7 @@
     }
     .mainContainer .todayBook > div ul li div p:last-of-type,
     .mainContainer .hotBook > div ul li div p:last-of-type{
-        word-break: break-all; line-height: 1.56vw;
+        text-align: justify; line-height: 1.56vw;
     }
     .mainContainer .todayBook > div span input,
     .mainContainer .hotBook > div span input{
@@ -194,4 +194,143 @@
 
     /* * */
 
+    .mainContainer .recommend > div:first-child{
+        display: flex; width: 65.62vw; margin: 0 auto;
+        margin-bottom: 1.56vw;
+    }
+    .mainContainer .recommend > div:first-child input{
+        appearance: none; border: none; background-color: rgba(40, 90, 53,0.6); font-weight: inherit;
+        color: #fff; line-height: 3.64vw; border-radius: 0.52vw; width: 25%; transition: background-color 0.2s ease-in-out;
+    }
+    .mainContainer .recommend > div:first-child input:hover,
+    .mainContainer .recommend > div:first-child input.active{
+        background-color: #285A35;
+    }
+    .mainContainer .recommend > div:first-child input:not(:first-child){
+        margin-left: 1.25vw;
+    }
+    .mainContainer .recommend > div:last-child{
+        width: 72.91vw; margin: 0 auto; position: relative; height: 100%;
+    }
+    .mainContainer .recommend > div:last-child div{
+        background-color: #62946F; padding: 1.56vw; width: 100%; position: absolute;
+        display: none;
+    }
+    .mainContainer .recommend > div:last-child div.active{
+        display: block;
+    }
+    .mainContainer .recommend > div:last-child div ul{
+        background-color: #457D53; box-shadow: inset 0 0 0.78vw rgba(0, 0, 0, 0.3);
+        display: flex;
+    }
+    .mainContainer .recommend > div:last-child div ul:first-child{
+        margin-bottom: 1.56vw;
+    }
+    .mainContainer .recommend > div:last-child div ul li{
+        width: 25%;  padding: 2.08vw 0 1.04vw; position: relative; display: flex; align-items: flex-end;
+    }
+    .mainContainer .recommend > div:last-child div ul li img{
+        height: 15.36vw; object-fit: contain;
+        display: block; margin: 0 auto;
+    }
+    .mainContainer .recommend > div:last-child div ul li div{
+        background-color: rgba(51, 51, 51, 0.3); margin: 0 auto; position: absolute;
+        top: 2.08vw; left: 50%; transform: translateX(-50%); height: 15.36vw; display: none;
+    }
+    .mainContainer .recommend > div:last-child div ul li:hover div{
+        display: flex; flex-direction: column; align-items: center; justify-content: center;
+    }
+    .mainContainer .recommend > div:last-child div ul li div a{
+        display: block; color: #fff; background: rgba(40, 90, 53,0.6); transition: background-color 0.1s linear;
+        line-height: 2.6vw; width: 5.2vw; text-align: center; border-radius: 0.52vw;
+    }
+    .mainContainer .recommend > div:last-child div ul li div a:hover{
+        background-color: #285A35;
+    }
+    .mainContainer .recommend > div:last-child div ul li div a:not(:last-child){
+        margin-bottom: 0.78vw;
+    }
+
+    /* * */
+
+    .mainContainer .typeReco{
+        padding: 0 17.19vw;
+    }
+    .mainContainer .typeReco h2{
+        position: relative;
+    }
+    .mainContainer .typeReco h2 > span{
+        position: absolute; right: 0;  top: 0; color: inherit;
+    }
+    .mainContainer .typeReco h2 > span input{
+        display: inline-block; width: 1.56vw; height: 2.08vw; text-indent: -9999px; cursor: pointer; transition: background-image 0.2s linear;
+        background-repeat: no-repeat; background-size: 1.56vw; border: none; background-color: transparent; padding: 0;
+    }
+    .mainContainer .typeReco h2 > span input:first-child{
+        background-position: left center;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='24px' viewBox='4 0 24 24' width='24px' fill='%23285A35' opacity='0.6'%3E%3Cpath d='M0 0h24v24H0V0z' fill='none'/%3E%3Cpath d='M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z'/%3E%3C/svg%3E%0A");
+    }
+    .mainContainer .typeReco h2 > span input:first-child:hover{
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='24px' viewBox='4 0 24 24' width='24px' fill='%23285A35'%3E%3Cpath d='M0 0h24v24H0V0z' fill='none'/%3E%3Cpath d='M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z'/%3E%3C/svg%3E");
+    }
+    .mainContainer .typeReco h2 > span input:last-child{
+        background-position: right center;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='24px' viewBox='-4 0 24 24' width='24px' fill='%23285A35' opacity='0.6'%3E%3Cpath d='M0 0h24v24H0V0z' fill='none'/%3E%3Cpath d='M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8-8-8z'/%3E%3C/svg%3E%0A");
+    }
+    .mainContainer .typeReco h2 > span input:last-child:hover{
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='24px' viewBox='-4 0 24 24' width='24px' fill='%23285A35'%3E%3Cpath d='M0 0h24v24H0V0z' fill='none'/%3E%3Cpath d='M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8-8-8z'/%3E%3C/svg%3E");
+    }
+    .mainContainer .typeReco h2 > span span{
+        color: inherit;
+    }
+    .mainContainer .typeReco ul{
+        border-bottom: 0.13vw solid #285A35; border-top: 0.13vw solid #285A35;
+        padding: 2.86vw 5.57vw; display: flex; overflow-x: scroll;
+    }
+    .mainContainer .typeReco ul li{
+        box-shadow: 0 0 1.04vw rgba(51, 51, 51, 0.3); border-radius: 1.04vw; padding: 1.56vw;
+        min-width: 51.35vw;
+    }
+    .mainContainer .typeReco ul li:not(:first-child){
+        margin-left: 5.57vw;
+    }
+    .mainContainer .typeReco ul li div:first-child{
+        display: flex; justify-content: space-between; margin-bottom: 1.04vw;
+    }
+    .mainContainer .typeReco ul li div:first-child span{
+        height: 15.36vw; position: relative; padding-bottom: 1.04vw;
+    }
+    .mainContainer .typeReco ul li div:first-child span::after{
+        content: ''; display: block; position: absolute; width: 0.53vw; height: 0.53vw; border-radius: 0.3vw;
+        background-color: #285A35; bottom: 0; left: 50%; transform: translateX(-50%); opacity: 0;
+        transition: opacity 0.2s ease-in;
+    }
+    .mainContainer .typeReco ul li div:first-child span:hover::after{
+        opacity: 0.3;
+    }
+    .mainContainer .typeReco ul li div:first-child span.active::after{
+        opacity: 1;
+    }
+    .mainContainer .typeReco ul li div:first-child span img{
+        height: 100%; cursor: pointer;
+    }
+    .mainContainer .typeReco ul li h3{
+        line-height: 1.56vw; margin-bottom: 1.04vw;
+    }
+    .mainContainer .typeReco ul li h3::after{
+        content: ''; display: block; clear: both;
+    }
+    .mainContainer .typeReco ul li h3 a{
+        float: right; color: rgba(106, 106, 106,0.7);
+    }
+    .mainContainer .typeReco ul li div:last-child{
+        position: relative; min-height: 5.98vw;
+    }
+    .mainContainer .typeReco ul li div p{
+        line-height: 1.56vw; text-align: justify; position: absolute; opacity: 0;
+        transition: opacity 0.3s ease-out; left: 0; top: 0;
+    }
+    .mainContainer .typeReco ul li div p.active{
+        opacity: 1;
+    }
 }
