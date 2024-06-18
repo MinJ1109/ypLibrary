@@ -256,10 +256,14 @@
     /* * */
 
     .mainContainer .typeReco{
-        padding: 0 17.19vw;
+        position: relative;
+    }
+    .mainContainer .typeReco:after{
+        content: ''; position: absolute; display: block; width: calc(100% - 34.38vw); height: 0.05vw;
+        bottom: 0; left: 17.19vw; border-top: 0.13vw solid #285A35; 
     }
     .mainContainer .typeReco h2{
-        position: relative;
+        position: relative; margin: 0 17.19vw; border-bottom: 0.13vw solid #285A35; 
     }
     .mainContainer .typeReco h2 > span{
         position: absolute; right: 0;  top: 0; color: inherit;
@@ -286,12 +290,22 @@
         color: inherit;
     }
     .mainContainer .typeReco ul{
-        border-bottom: 0.13vw solid #285A35; border-top: 0.13vw solid #285A35;
-        padding: 2.86vw 5.57vw; display: flex; overflow-x: scroll;
+        padding: 2.86vw 0; display: flex; overflow-x: scroll;
+        -ms-overflow-style: none; scrollbar-width: none;
     }
+    .mainContainer .typeReco ul::-webkit-scrollbar{
+        display: none;
+      }
     .mainContainer .typeReco ul li{
         box-shadow: 0 0 1.04vw rgba(51, 51, 51, 0.3); border-radius: 1.04vw; padding: 1.56vw;
-        min-width: 51.35vw;
+        min-width: 50vw; transform: translateX(-30.57vw); position: relative;
+    }
+    .mainContainer .typeReco ul li::after{
+        content: ''; display: block; position: absolute; top: 0; left: 0; transition: backdrop-filter 0.2s ease-out;
+        width: 100%; height: 100%; border-radius: 1.04vw; backdrop-filter: blur(0.5vw);
+    }
+    .mainContainer .typeReco ul li.active::after{
+        backdrop-filter: none;
     }
     .mainContainer .typeReco ul li:not(:first-child){
         margin-left: 5.57vw;
@@ -308,9 +322,9 @@
         transition: opacity 0.2s ease-in;
     }
     .mainContainer .typeReco ul li div:first-child span:hover::after{
-        opacity: 0.3;
+        opacity: 0.2;
     }
-    .mainContainer .typeReco ul li div:first-child span.active::after{
+    .mainContainer .typeReco ul li div:first-child span:has(img.active)::after{
         opacity: 1;
     }
     .mainContainer .typeReco ul li div:first-child span img{
@@ -326,13 +340,13 @@
         float: right; color: rgba(106, 106, 106,0.7);
     }
     .mainContainer .typeReco ul li div:last-child{
-        position: relative; min-height: 5.98vw;
+        position: relative; 
     }
-    .mainContainer .typeReco ul li div p{
+    .mainContainer .typeReco ul li div:last-child p{
         line-height: 1.56vw; text-align: justify; position: absolute; opacity: 0;
-        transition: opacity 0.3s ease-out; left: 0; top: 0;
+        transition: opacity 0.2s ease-out; left: 0; top: 0;
     }
-    .mainContainer .typeReco ul li div p.active{
+    .mainContainer .typeReco ul li div:last-child p.active{
         opacity: 1;
     }
 }

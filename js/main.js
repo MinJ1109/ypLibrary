@@ -5,9 +5,11 @@ $( document ).ready(function(){
     todaySlide();
     hotSlide();
     recoSlide();
+    typeRecoClick();
 
     divSize();
     divH();
+    divH2();
 
 });
 
@@ -15,10 +17,12 @@ function onWindow(){
     $(window).on('load', conMargin);
     $(window).on('load', divSize);
     $(window).on('load', divH);
+    $(window).on('load', divH2);
 
     $(window).on('resize', conMargin); 
     $(window).on('resize', divSize);
     $(window).on('resize', divH);
+    $(window).on('resize', divH2);
 }
 
 function conMargin(){
@@ -109,6 +113,20 @@ function divH(){
     var height = $(".mainContainer .recommend > div:last-child > div").outerHeight();
     $(".mainContainer .recommend > div:last-child").css('height', height);
 }
+function divH2(){
+    var targetDiv = $(".mainContainer .typeReco ul li div:last-child");
+    var maxHeight = 0;
+
+    targetDiv.find('p').each(function(){
+        var height = $(this).outerHeight();
+        
+        if (height > maxHeight){
+            maxHeight = height;
+        }
+    });
+
+    targetDiv.css('height', maxHeight);
+}
 
 function divSize(){
     $('.mainContainer .recommend > div:last-child > div ul li').each(function(){
@@ -120,7 +138,7 @@ function divSize(){
 function recoSlide(){    
     var activeBtn = $('.mainContainer .recommend > div:first-child input[type="button"]');
 
-    activeBtn.on('click', function() {
+    activeBtn.on('click', function(){
         var otherDiv = $('.mainContainer .recommend > div:last-child > div');
         var target = $(this).data('click');
         var divTarget = $('#' + target);
@@ -131,5 +149,21 @@ function recoSlide(){
         divTarget.addClass('active');
 
         divSize();
+    });
+}
+
+function typeRecoClick(){
+    var activeSpan = $('.mainContainer .typeReco ul li div:first-child span img');
+
+    activeSpan.on('click', function(){
+        var parentLi = $(this).closest('li'); // 클릭된 span 요소의 부모 li 요소를 찾음
+        var otherP = parentLi.find('div:last-child p');
+        var target = $(this).data('click');
+        var pTarget = $('#' + target);
+        
+        activeSpan.removeClass('active');
+        $(this).addClass('active');
+        otherP.removeClass('active');
+        pTarget.addClass('active');
     });
 }
