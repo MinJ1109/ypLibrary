@@ -106,12 +106,12 @@ function hotSlide(){
 }
 
 function divH(){
-    var height = $(".mainContainer .recommend > div:last-child div").outerHeight();
+    var height = $(".mainContainer .recommend > div:last-child > div").outerHeight();
     $(".mainContainer .recommend > div:last-child").css('height', height);
 }
 
 function divSize(){
-    $('.mainContainer .recommend > div:last-child div ul li').each(function(){
+    $('.mainContainer .recommend > div:last-child > div ul li').each(function(){
         var imgWidth = $(this).find('img').width();
         $(this).find('div').css('width', imgWidth);
     });
@@ -121,7 +121,7 @@ function recoSlide(){
     var activeBtn = $('.mainContainer .recommend > div:first-child input[type="button"]');
 
     activeBtn.on('click', function() {
-        var otherDiv = $('.mainContainer .recommend > div:last-child div');
+        var otherDiv = $('.mainContainer .recommend > div:last-child > div');
         var target = $(this).data('click');
         var divTarget = $('#' + target);
 

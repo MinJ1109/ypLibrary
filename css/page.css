@@ -212,44 +212,44 @@
     .mainContainer .recommend > div:last-child{
         width: 72.91vw; margin: 0 auto; position: relative; height: 100%;
     }
-    .mainContainer .recommend > div:last-child div{
+    .mainContainer .recommend > div:last-child > div{
         background-color: #62946F; padding: 1.56vw; width: 100%; position: absolute;
         display: none;
     }
-    .mainContainer .recommend > div:last-child div.active{
+    .mainContainer .recommend > div:last-child > div.active{
         display: block;
     }
-    .mainContainer .recommend > div:last-child div ul{
+    .mainContainer .recommend > div:last-child > div ul{
         background-color: #457D53; box-shadow: inset 0 0 0.78vw rgba(0, 0, 0, 0.3);
         display: flex;
     }
-    .mainContainer .recommend > div:last-child div ul:first-child{
+    .mainContainer .recommend > div:last-child > div ul:first-child{
         margin-bottom: 1.56vw;
     }
-    .mainContainer .recommend > div:last-child div ul li{
+    .mainContainer .recommend > div:last-child > div ul li{
         width: 25%;  padding: 2.08vw 0 1.04vw; position: relative; display: flex; align-items: flex-end;
     }
-    .mainContainer .recommend > div:last-child div ul li img{
+    .mainContainer .recommend > div:last-child > div ul li img{
         height: 15.36vw; object-fit: contain;
         display: block; margin: 0 auto;
     }
-    .mainContainer .recommend > div:last-child div ul li div{
+    .mainContainer .recommend > div:last-child > div ul li div{
         background-color: rgba(51, 51, 51, 0.3); margin: 0 auto; position: absolute;
         top: 2.08vw; left: 50%; transform: translateX(-50%); height: 15.36vw; opacity: 0;
         display: flex; flex-direction: column; align-items: center; justify-content: center;
         transition: opacity 0.2s ease-in;
     }
-    .mainContainer .recommend > div:last-child div ul li:hover div{
+    .mainContainer .recommend > div:last-child > div ul li:hover div{
         opacity: 1;
     }
-    .mainContainer .recommend > div:last-child div ul li div a{
+    .mainContainer .recommend > div:last-child > div ul li div a{
         display: block; color: #fff; background: rgba(40, 90, 53,0.6); transition: background-color 0.1s linear;
         line-height: 2.6vw; width: 5.2vw; text-align: center; border-radius: 0.52vw;
     }
-    .mainContainer .recommend > div:last-child div ul li div a:hover{
+    .mainContainer .recommend > div:last-child > div ul li div a:hover{
         background-color: #285A35;
     }
-    .mainContainer .recommend > div:last-child div ul li div a:not(:last-child){
+    .mainContainer .recommend > div:last-child > div ul li div a:not(:last-child){
         margin-bottom: 0.78vw;
     }
 
