@@ -1,9 +1,5 @@
 $( document ).ready(function(){
-    $(window).load(conMargin);
-    $(window).resize(conMargin); 
-    $(window).resize(divSize);
-    $(window).resize(divH);
-
+    onWindow();
     navSlide();
     mainSldie();
     todaySlide();
@@ -14,6 +10,16 @@ $( document ).ready(function(){
     divH();
 
 });
+
+function onWindow(){
+    $(window).on('load', conMargin);
+    $(window).on('load', divSize);
+    $(window).on('load', divH);
+
+    $(window).on('resize', conMargin); 
+    $(window).on('resize', divSize);
+    $(window).on('resize', divH);
+}
 
 function conMargin(){
     var height = $('header').outerHeight(true);
