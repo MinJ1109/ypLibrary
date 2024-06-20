@@ -177,35 +177,35 @@ function typeRecoClick(){
 }
 
 
-function typeRecoSlide() {
+function typeRecoSlide(){
     var prevBtn = $('.mainContainer .typeReco h2 > span .prevBtn');
     var nextBtn = $('.mainContainer .typeReco h2 > span .nextBtn');
-
     var slideBox = $('.mainContainer .typeReco > div ul');
     var slideChildren = $('.mainContainer .typeReco > div ul li');
 
     var gapSize = 5.57;
     var liLength = slideChildren.length;
-    
     var slideWidth = 50;
     var currentPosition = -((slideWidth/2) + gapSize);
 
     var firstSlide = slideChildren.eq(0).clone();
     var lastSlide = slideChildren.eq(liLength - 1).clone();
 
+    firstSlide.find('[id]').removeAttr('id');
+    lastSlide.find('[id]').removeAttr('id');
+
     firstSlide.appendTo(slideBox);
     lastSlide.prependTo(slideBox);
+    slideBox.css('transform', 'translateX(' + currentPosition + 'vw)');
 
-    prevBtn.on('click', function() {
+    prevBtn.on('click', function(){
         currentPosition += slideWidth + gapSize;
         slideBox.css('transform', 'translateX(' + currentPosition + 'vw)');
-
     });
 
-    nextBtn.on('click', function() {
+    nextBtn.on('click', function(){
         currentPosition -= slideWidth + gapSize; 
         slideBox.css('transform', 'translateX(' + currentPosition + 'vw)');
-
     });
 }
 
