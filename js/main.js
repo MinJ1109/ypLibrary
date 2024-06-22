@@ -1,4 +1,4 @@
-$( document ).ready(function(){
+$(document).ready(function(){
     onWindow();
     navSlide();
     mainSldie();
@@ -11,8 +11,8 @@ $( document ).ready(function(){
     divH2();
     countLi();
 
-    typeRecoClick();
     typeRecoSlide();
+    typeRecoClick();
 });
 
 function onWindow(){
@@ -161,21 +161,21 @@ function countLi(){
 }
 
 function typeRecoClick(){
-    var activeSpan = $('.mainContainer .typeReco > div ul li div:first-child span img');
+    var activeSpan = $('.mainContainer .typeReco > div ul li');
 
-    activeSpan.on('click', function(){
+    activeSpan.find('div:first-child').children('span').children('img').on('click', function(){
         var parentLi = $(this).closest('li');
+        var otherImg = parentLi.find('div:first-child span img').not(this);
         var otherP = parentLi.find('div:last-child p');
         var target = $(this).data('click');
-        var pTarget = $('#' + target);
+        var pTarget = $('.' + target);
         
-        activeSpan.removeClass('active');
+        otherImg.removeClass('active');
         $(this).addClass('active');
         otherP.removeClass('active');
         pTarget.addClass('active');
     });
 }
-
 
 function typeRecoSlide(){
     var prevBtn = $('.mainContainer .typeReco h2 > span .prevBtn');
@@ -190,9 +190,8 @@ function typeRecoSlide(){
 
     var firstSlide = slideChildren.eq(0).clone();
     var lastSlide = slideChildren.eq(liLength - 1).clone();
-
-    firstSlide.find('[id]').removeAttr('id');
-    lastSlide.find('[id]').removeAttr('id');
+    
+    cloneReClass(firstSlide, lastSlide);
 
     firstSlide.appendTo(slideBox);
     lastSlide.prependTo(slideBox);
@@ -209,30 +208,22 @@ function typeRecoSlide(){
     });
 }
 
-// }
-// function typeRecoSlide(){
-//     var prevBtn = $('.mainContainer .typeReco h2 > span .prevBtn');
-//     var nextBtn = $('.mainContainer .typeReco h2 > span .nextBtn');
-//     var slideBox = $('.mainContainer .typeReco > div ul');
-//     var slideChildren = $('.mainContainer .typeReco > div ul li');
-//     var gapSize = 5.57 + 'vw';
-//     var liLength = slideChildren.length;
-    
-//     var slideWidth = slideChildren.outerWidth(true);
-//     var currentPosition = 0;
+function cloneReClass(firstSlide, lastSlide){
+    firstSlide.find('div:first-child span img').each(function(index){
+        $(this).attr('data-click', 'romanceClone0' + (index + 1));
+    });
+    firstSlide.find('div:last-child p').each(function(index){
+        var currentClass = 'romance0' + (index + 1);
+        var newClass = 'romanceClone0' + (index + 1);
+        $(this).removeClass(currentClass).addClass(newClass);
+    });
 
-//     var firstSlide = slideChildren.eq(0).clone();
-//     var lastSlide = slideChildren.eq(liLength - 1).clone();
-
-//     firstSlide.appendTo(slideBox);
-//     lastSlide.prependTo(slideBox);
-
-//     var totalSlides = slideBox.children().length;
-
-//     prevBtn.on('click', function(){
-//         slideChildren.css('transform', 'translateX(111.14vw)');
-//     });
-
-//     nextBtn.on('click', function(){
-//         slideChildren.css('transform', 'translateX(-111.14vw)');
-//     });
+    lastSlide.find('div:first-child span img').each(function(index){
+        $(this).attr('data-click', 'gameClone0' + (index + 1));
+    });
+    lastSlide.find('div:last-child p').each(function(index){
+        var currentClass = 'game0' + (index + 1);
+        var newClass = 'gameClone0' + (index + 1);
+        $(this).removeClass(currentClass).addClass(newClass);
+    });
+}
