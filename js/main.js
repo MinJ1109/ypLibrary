@@ -11,8 +11,9 @@ $(document).ready(function(){
     divH2();
     countLi();
 
-    typeRecoSlide();
     typeRecoClick();
+    sliderBX();
+    sldieBlur();
 });
 
 function onWindow(){
@@ -155,13 +156,13 @@ function recoSlide(){
 }
 
 function countLi(){
-    var liLength = $('.mainContainer .typeReco > div ul li').length;
+    var liLength = $('.mainContainer .typeReco ul li').length;
     
     $('.mainContainer .typeReco .liCount').text(liLength);
 }
 
 function typeRecoClick(){
-    var activeSpan = $('.mainContainer .typeReco > div ul li');
+    var activeSpan = $('.mainContainer .typeReco ul li');
 
     activeSpan.find('div:first-child').children('span').children('img').on('click', function(){
         var parentLi = $(this).closest('li');
@@ -177,53 +178,22 @@ function typeRecoClick(){
     });
 }
 
-function typeRecoSlide(){
-    var prevBtn = $('.mainContainer .typeReco h2 > span .prevBtn');
-    var nextBtn = $('.mainContainer .typeReco h2 > span .nextBtn');
-    var slideBox = $('.mainContainer .typeReco > div ul');
-    var slideChildren = $('.mainContainer .typeReco > div ul li');
-
-    var gapSize = 5.57;
-    var liLength = slideChildren.length;
-    var slideWidth = 50;
-    var currentPosition = -((slideWidth/2) + gapSize);
-
-    var firstSlide = slideChildren.eq(0).clone();
-    var lastSlide = slideChildren.eq(liLength - 1).clone();
-    
-    cloneReClass(firstSlide, lastSlide);
-
-    firstSlide.appendTo(slideBox);
-    lastSlide.prependTo(slideBox);
-    slideBox.css('transform', 'translateX(' + currentPosition + 'vw)');
-
-    prevBtn.on('click', function(){
-        currentPosition += slideWidth + gapSize;
-        slideBox.css('transform', 'translateX(' + currentPosition + 'vw)');
-    });
-
-    nextBtn.on('click', function(){
-        currentPosition -= slideWidth + gapSize; 
-        slideBox.css('transform', 'translateX(' + currentPosition + 'vw)');
+function sliderBX(){
+    $(".typeSlider").bxSlider({
+        minSlides: 1,
+        maxSlides: 6,
+        moveSlides: 1,
+        infiniteLoop: true,
+        pager: false,
+        touchEnabled: false,
+        nextSelector: '.mainContainer .typeReco h2 > span .nextBox',
+        prevSelector: '.mainContainer .typeReco h2 > span .prevBox',
+        nextText: 'Next',
+        prevText: 'Prev',
+        speed: 800
     });
 }
 
-function cloneReClass(firstSlide, lastSlide){
-    firstSlide.find('div:first-child span img').each(function(index){
-        $(this).attr('data-click', 'romanceClone0' + (index + 1));
-    });
-    firstSlide.find('div:last-child p').each(function(index){
-        var currentClass = 'romance0' + (index + 1);
-        var newClass = 'romanceClone0' + (index + 1);
-        $(this).removeClass(currentClass).addClass(newClass);
-    });
-
-    lastSlide.find('div:first-child span img').each(function(index){
-        $(this).attr('data-click', 'gameClone0' + (index + 1));
-    });
-    lastSlide.find('div:last-child p').each(function(index){
-        var currentClass = 'game0' + (index + 1);
-        var newClass = 'gameClone0' + (index + 1);
-        $(this).removeClass(currentClass).addClass(newClass);
-    });
+function sldieBlur(){
+    var liElements = $('.mainContainer .typeReco ul li');
 }
