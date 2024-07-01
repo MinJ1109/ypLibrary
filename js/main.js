@@ -13,7 +13,6 @@ $(document).ready(function(){
 
     typeRecoClick();
     sliderBX();
-    sldieBlur();
 });
 
 function onWindow(){
