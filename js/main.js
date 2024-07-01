@@ -116,7 +116,7 @@ function divH(){
     $(".mainContainer .recommend > div:last-child").css('height', height);
 }
 function divH2(){
-    var targetDiv = $(".mainContainer .typeReco > div ul li div:last-child");
+    var targetDiv = $(".mainContainer .typeReco ul li div:last-child");
     var maxHeight = 0;
 
     targetDiv.find('p').each(function(){
@@ -155,13 +155,13 @@ function recoSlide(){
 }
 
 function countLi(){
-    var liLength = $('.mainContainer .typeReco > div ul li').length;
+    var liLength = $('.mainContainer .typeReco ul li').length;
     
     $('.mainContainer .typeReco .liCount').text(liLength);
 }
 
 function typeRecoClick(){
-    var activeSpan = $('.mainContainer .typeReco > div ul li');
+    var activeSpan = $('.mainContainer .typeReco ul li');
 
     activeSpan.find('div:first-child').children('span').children('img').on('click', function(){
         var parentLi = $(this).closest('li');
