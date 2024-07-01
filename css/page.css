@@ -256,14 +256,14 @@
     /* * */
 
     .mainContainer .typeReco{
-        position: relative; padding-bottom: 2.82vw;
+        position: relative;
     }
     .mainContainer .typeReco:after{
         content: ''; position: absolute; display: block; width: calc(100% - 34.38vw); height: 0.05vw;
         bottom: 0; left: 17.19vw; border-top: 0.13vw solid #285A35; 
     }
     .mainContainer .typeReco h2{
-        position: relative; margin: 0 17.19vw 2.86vw; border-bottom: 0.13vw solid #285A35; 
+        position: relative; margin: 0 17.19vw; border-bottom: 0.13vw solid #285A35; 
     }
     .mainContainer .typeReco h2 > span{
         position: absolute; right: 0;  top: 0; color: inherit;
@@ -342,5 +342,8 @@
     }
     .mainContainer .typeReco ul li div:last-child p.active{
         opacity: 1;
+    }
+    .mainContainer .typeReco .bx-wrapper{
+        padding: 2.86vw 0;
     }
 }
