@@ -190,10 +190,10 @@ function sliderBX(){
         prevSelector: '.mainContainer .typeReco h2 > span .prevBox',
         nextText: 'Next',
         prevText: 'Prev',
-        speed: 800
+        speed: 800,
+        onSlideAfter: function($slideElement, oldIndex, newIndex){
+            var currentSlideNumber = newIndex + 1;
+            $('.liNumb').text(currentSlideNumber);
+        }
     });
-}
-
-function sldieBlur(){
-    var liElements = $('.mainContainer .typeReco ul li');
 }

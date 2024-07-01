@@ -256,14 +256,14 @@
     /* * */
 
     .mainContainer .typeReco{
-        position: relative;
+        position: relative; padding-bottom: 2.82vw;
     }
     .mainContainer .typeReco:after{
         content: ''; position: absolute; display: block; width: calc(100% - 34.38vw); height: 0.05vw;
         bottom: 0; left: 17.19vw; border-top: 0.13vw solid #285A35; 
     }
     .mainContainer .typeReco h2{
-        position: relative; margin: 0 17.19vw; border-bottom: 0.13vw solid #285A35; 
+        position: relative; margin: 0 17.19vw 2.86vw; border-bottom: 0.13vw solid #285A35; 
     }
     .mainContainer .typeReco h2 > span{
         position: absolute; right: 0;  top: 0; color: inherit;
@@ -289,24 +289,21 @@
     .mainContainer .typeReco h2 > span .nextBox a:hover{
         background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='24px' viewBox='-4 0 24 24' width='24px' fill='%23285A35'%3E%3Cpath d='M0 0h24v24H0V0z' fill='none'/%3E%3Cpath d='M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8-8-8z'/%3E%3C/svg%3E");
     }
-    .mainContainer .typeReco .bx-wrapper{
-        overflow: hidden; padding: 2.86vw 0; position: relative;
-    }
     .mainContainer .typeReco ul{
-        display: flex; gap: 5.57vw;
+        display: flex; gap: 5.57vw; 
     }
     .mainContainer .typeReco ul li{
         box-shadow: 0 0 1.04vw rgba(51, 51, 51, 0.3); border-radius: 1.04vw; padding: 1.56vw;
         position: relative; flex: 0 0 50vw; 
     }
-    .mainContainer .typeReco ul li::after{
-        content: ''; display: block; position: absolute; top: 0; left: 0;
+    /* .mainContainer .typeReco ul li::after{
+        content: ''; display: block; position: absolute; top: 0; left: 0;  opacity: 1; z-index: 0;
         width: 100%; height: 100%; border-radius: 1.04vw; backdrop-filter: blur(0.5vw);
-        transition: all 0.3s linear; opacity: 1; z-index: 0;
+        transition: all 0.3s linear;
     }
     .mainContainer .typeReco ul li.active::after{
         opacity: 0; z-index: -1;
-    }
+    } */
     .mainContainer .typeReco ul li div:first-child{
         display: flex; justify-content: space-between; margin-bottom: 1.04vw;
     }
