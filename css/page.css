@@ -343,7 +343,4 @@
     .mainContainer .typeReco ul li div:last-child p.active{
         opacity: 1;
     }
-    .mainContainer .typeReco .bx-wrapper{
-        padding: 2.86vw 0; box-sizing: border-box;
-    }
 }
